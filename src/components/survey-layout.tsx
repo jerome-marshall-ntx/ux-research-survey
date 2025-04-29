@@ -17,7 +17,7 @@ interface SurveyLayoutProps {
 export function SurveyLayout({ children }: SurveyLayoutProps) {
 	return (
 		<div className="relative min-h-screen flex flex-col pt-12 md:pt-16">
-			<div className="flex flex-col justify-start md:items-center mx-auto">
+			<div className="flex flex-col justify-start items-center mx-auto">
 				<img src={NutanixLogo} alt="Nutanix Logo" className="h-9 w-fit" />
 				<p className="text-white/80 text-2xl md:text-3xl font-grotesque font-[200] mt-2">
 					UX Research

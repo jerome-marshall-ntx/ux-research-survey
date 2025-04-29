@@ -50,7 +50,7 @@ export function Step2Form({
 					name="roleWorkAreas"
 					render={() => (
 						<FormItem>
-							<FormLabel className="mb-3 flex">
+							<FormLabel className="mb-3 flex leading-normal">
 								{formOptions.title} <span className="text-red-500">*</span>
 							</FormLabel>
 							<div className="space-y-3">
@@ -84,7 +84,7 @@ export function Step2Form({
 															}}
 														/>
 													</FormControl>
-													<FormLabel className="text-sm font-normal! font-sans!">
+													<FormLabel className="text-lg font-normal! font-sans!">
 														{option}
 													</FormLabel>
 												</FormItem>

@@ -14,7 +14,7 @@ export const step1Schema = z.object({
 	email: z.string().min(1, { message: "Enter your email" }).email({
 		message: "Enter a valid email",
 	}),
-	jobRole: z.string().optional(),
+	jobRole: z.string().min(1, { message: "Enter your job role" }),
 });
 
 export type Step1FormValues = z.infer<typeof step1Schema>;

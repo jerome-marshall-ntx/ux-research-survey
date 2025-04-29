@@ -1,16 +1,18 @@
 export function Step3Thankyou() {
 	return (
-		<div className="flex flex-col py-8 px-4 max-w-2xl mx-auto">
-			<h1 className="text-5xl font-bold text-primary mb-6">Thank You!</h1>
+		<div className="flex flex-col md:py-8 py-4 px-4 max-w-2xl mx-auto">
+			<h1 className="md:text-5xl text-3xl font-bold text-primary mb-6">Thank You!</h1>
 
 			<div className=" text-gray-600 space-y-4">
-				<p className="text-2xl">
-					We appreciate you taking the time to share your perspective with
-					Nutanix.
+				<p className="md:text-2xl text-xl">
+				We value your interest and appreciate
+				you taking out the time
 				</p>
-				<p className="text-2xl">
-					We'll be in touch soon with more opportunities to contribute to our
-					research initiatives.
+				<p className="md:text-2xl text-xl">
+				For research-related conversations, feel free to get in touch with Paul DiGioia at <a href="mailto:pdigioia@nutanix.com" className="text-primary">pdigioia@nutanix.com</a>
+				</p>
+				<p className="md:text-2xl text-xl">
+				We look forward to connecting with you
 				</p>
 			</div>
 

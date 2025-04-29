@@ -36,13 +36,13 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
 				<FormField
 					control={form.control}
 					name="relationship"
 					render={({ field }) => (
-						<FormItem className="space-y-3">
-							<FormLabel>
+						<FormItem className="">
+							<FormLabel className="leading-normal">
 								How would you describe your relationship with Nutanix?{" "}
 								{RequiredIndicator}
 							</FormLabel>
@@ -50,32 +50,40 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 								<RadioGroup
 									onValueChange={field.onChange}
 									defaultValue={field.value}
-									className="space-y-3 mt-2"
+									className=" mt-2"
 								>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="partner" id="partner" />
-										<Label htmlFor="partner">I am a Partner</Label>
+										<Label htmlFor="partner" className="text-lg">
+											I am a Partner
+										</Label>
 									</div>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="customer" id="customer" />
-										<Label htmlFor="customer">I am a Customer</Label>
+										<Label htmlFor="customer" className="text-lg">
+											I am a Customer
+										</Label>
 									</div>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem
 											value="future-customer"
 											id="future-customer"
 										/>
-										<Label htmlFor="future-customer">
+										<Label htmlFor="future-customer" className="text-lg">
 											I am a Future Customer
 										</Label>
 									</div>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="employee" id="employee" />
-										<Label htmlFor="employee">I am a Nutanix Employee</Label>
+										<Label htmlFor="employee" className="text-lg">
+											I am a Nutanix Employee
+										</Label>
 									</div>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="other" id="other" />
-										<Label htmlFor="other">Other...</Label>
+										<Label htmlFor="other" className="text-lg">
+											Other...
+										</Label>
 									</div>
 								</RadioGroup>
 							</FormControl>
@@ -150,7 +158,7 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 					name="jobRole"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>What is your role in your organization?</FormLabel>
+							<FormLabel>What is your role in your organization? {RequiredIndicator}</FormLabel>
 							<FormControl>
 								<Input placeholder="Enter your job role" {...field} />
 							</FormControl>
