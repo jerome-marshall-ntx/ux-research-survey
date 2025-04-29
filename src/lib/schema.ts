@@ -30,17 +30,17 @@ export type Step2FormValues = z.infer<typeof step2Schema>;
 
 const customerTitle = "What areas do you work in?";
 const customerWorkAreas = [
-	"Infrastructure Administration (Infra)",
-	"Storage (Infra)",
-	"Cluster Management (Infra)",
-	"Disaster Recovery (Infra)",
-	"Networking (Infra)",
-	"Database Administration (Infra)",
-	"Kubernetes (Cloud)",
-	"Cost Governance /Cost Management",
-	"Licensing and Lifecycle Management (Common services)",
-	"Security and Compliance (Common services)",
-	"Identity and Access Management (Common Services)",
+	"Infrastructure Administration",
+	"Storage",
+	"Cluster Management",
+	"Disaster Recovery",
+	"Networking",
+	"Database Administration",
+	"Kubernetes",
+	"Cost Governance / Cost Management",
+	"Licensing and Lifecycle Management",
+	"Security and Compliance",
+	"Identity and Access Management",
 	"Troubleshooting and Maintenance",
 ];
 // Form data options for step 2
