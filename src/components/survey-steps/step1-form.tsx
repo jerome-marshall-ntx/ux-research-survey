@@ -24,6 +24,7 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 		resolver: zodResolver(step1Schema),
 		defaultValues: defaultValues || {
 			relationship: undefined,
+			otherRelationship: "",
 			firstName: "",
 			lastName: "",
 			companyName: "",
@@ -33,6 +34,7 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 	});
 
 	const RequiredIndicator = <span className="text-red-500">*</span>;
+	const isOtherSelected = form.watch("relationship") === "other";
 
 	return (
 		<Form {...form}>
@@ -91,6 +93,22 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 						</FormItem>
 					)}
 				/>
+
+				{isOtherSelected && (
+					<FormField
+						control={form.control}
+						name="otherRelationship"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Please specify your relationship {RequiredIndicator}</FormLabel>
+								<FormControl>
+									<Input placeholder="Enter your relationship with Nutanix" {...field} />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+				)}
 
 				<div className="grid md:grid-cols-2 gap-4">
 					<FormField

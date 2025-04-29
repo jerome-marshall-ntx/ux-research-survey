@@ -8,6 +8,7 @@ import {
 	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import {
 	STEP2_FORM_OPTIONS,
 	type Step1FormValues,
@@ -16,6 +17,7 @@ import {
 } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 interface Step2FormProps {
 	relationshipType: Exclude<Step1FormValues["relationship"], "other">;
@@ -28,6 +30,8 @@ export function Step2Form({
 	onSubmit,
 	onBack,
 }: Step2FormProps) {
+	const [otherText, setOtherText] = useState("");
+	
 	const form = useForm<Step2FormValues>({
 		resolver: zodResolver(step2Schema),
 		defaultValues: {
@@ -37,10 +41,17 @@ export function Step2Form({
 
 	// Handle form submission
 	const handleSubmit = (data: Step2FormValues) => {
+		// If "Other" is selected and there's text, replace "Other" with the specific text
+		if (data.roleWorkAreas.includes("Other") && otherText.trim()) {
+			data.roleWorkAreas = data.roleWorkAreas
+				.filter(area => area !== "Other")
+				.concat([`Other: ${otherText.trim()}`]);
+		}
 		onSubmit(data);
 	};
 
 	const formOptions = STEP2_FORM_OPTIONS[relationshipType];
+	const isOtherSelected = form.watch("roleWorkAreas").includes("Other");
 
 	return (
 		<Form {...form}>
@@ -97,6 +108,19 @@ export function Step2Form({
 						</FormItem>
 					)}
 				/>
+
+				{isOtherSelected && (
+					<FormItem>
+						<FormLabel>Please specify:</FormLabel>
+						<FormControl>
+							<Input 
+								placeholder="Please specify your option" 
+								value={otherText}
+								onChange={(e) => setOtherText(e.target.value)}
+							/>
+						</FormControl>
+					</FormItem>
+				)}
 
 				<div className="flex justify-between pt-4">
 					<Button type="button" variant="outline" onClick={onBack}>

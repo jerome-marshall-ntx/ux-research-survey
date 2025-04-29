@@ -17,6 +17,7 @@ export function SurveyForm() {
 		jobRole: "",
 		relationship: "partner",
 		roleWorkAreas: [],
+		otherRelationship: "",
 	} as FormDataType);
 
 	const sendSurvey = async (data: FormDataType) => {
@@ -27,7 +28,14 @@ export function SurveyForm() {
 		formData.append("Email", data.email);
 		formData.append("Company", data.companyName);
 		formData.append("Role", data.jobRole ?? "");
-		formData.append("Relationship", data.relationship);
+		
+		// Add relationship with "Other" specification if applicable
+		const relationshipText = data.relationship === "other" && data.otherRelationship
+			? `Other: ${data.otherRelationship}`
+			: data.relationship;
+		formData.append("Relationship", relationshipText);
+		
+		// Work areas will already have "Other: [text]" if the user specified other
 		formData.append("Work Areas", data.roleWorkAreas.join(", "));
 
 		fetch(
@@ -46,11 +54,11 @@ export function SurveyForm() {
 	};
 
 	const handleStep1Submit = (data: Step1FormValues) => {
-		setFormData({ ...formData, ...data });
+		const updatedFormData = { ...formData, ...data };
+		setFormData(updatedFormData);
 
-		if (formData.relationship === "other") {
-			sendSurvey(formData);
-
+		if (data.relationship === "other") {
+			sendSurvey(updatedFormData);
 			return;
 		}
 

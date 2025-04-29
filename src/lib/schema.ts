@@ -8,6 +8,7 @@ export const step1Schema = z.object({
 			required_error: "Select how you work with Nutanix",
 		},
 	),
+	otherRelationship: z.string().optional(),
 	firstName: z.string().min(1, { message: "Enter your first name" }),
 	lastName: z.string().optional(),
 	companyName: z.string().min(1, { message: "Enter your company name" }),
@@ -15,6 +16,12 @@ export const step1Schema = z.object({
 		message: "Enter a valid email",
 	}),
 	jobRole: z.string().min(1, { message: "Enter your job role" }),
+}).refine(data => {
+	// If relationship is "other", otherRelationship should be provided
+	return data.relationship !== "other" || (data.otherRelationship && data.otherRelationship.trim().length > 0);
+}, {
+	message: "Please specify your relationship",
+	path: ["otherRelationship"]
 });
 
 export type Step1FormValues = z.infer<typeof step1Schema>;
@@ -53,11 +60,17 @@ export const STEP2_FORM_OPTIONS: Record<
 > = {
 	customer: {
 		title: customerTitle,
-		options: customerWorkAreas,
+		options: [
+			...customerWorkAreas,
+			"Other",
+		],
 	},
 	"future-customer": {
 		title: customerTitle,
-		options: customerWorkAreas,
+		options: [
+			...customerWorkAreas,
+			"Other",
+		],
 	},
 	partner: {
 		title: "Which part of the customer lifecycle are you involved in?",
@@ -73,6 +86,7 @@ export const STEP2_FORM_OPTIONS: Record<
 			"Customer Success",
 			"Vendor/Supplier Management",
 			"Not directly involved",
+			"Other",
 		],
 	},
 	employee: {
@@ -86,6 +100,7 @@ export const STEP2_FORM_OPTIONS: Record<
 			"Marketing",
 			"Research & Development (R&D)",
 			"SRE - Support Engineer",
+			"Other",
 		],
 	},
 };
