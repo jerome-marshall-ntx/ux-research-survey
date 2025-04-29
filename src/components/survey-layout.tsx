@@ -1,3 +1,13 @@
+import DesktopBottomLines from "@/assets/desktop-bottom-lines.png";
+import DesktopGradientLeft from "@/assets/desktop-gradient-left.png";
+import DesktopGradientRight from "@/assets/desktop-gradient-right.png";
+import DesktopTopLines from "@/assets/desktop-top-lines.png";
+import GradientMobile from "@/assets/gradient-mobile.png";
+import MobileBottomLines from "@/assets/mobile-bottom-lines.png";
+import MobileTopLines from "@/assets/mobile-top-lines.png";
+import NutanixNextLogo from "@/assets/nutanix-next.svg";
+import NutanixLogo from "@/assets/nutanix.svg";
+
 import type { ReactNode } from "react";
 
 interface SurveyLayoutProps {
@@ -6,61 +16,67 @@ interface SurveyLayoutProps {
 
 export function SurveyLayout({ children }: SurveyLayoutProps) {
 	return (
-		<div className="min-h-screen flex flex-col relative bg-[#1A1A2E]">
-			{/* Gradient lines at top */}
-			<div className="absolute top-0 left-0 right-0 h-16">
-				<div
-					className="h-1 w-full bg-gradient-to-r from-[#FD8F79] to-[#7855FA]"
-					style={{ marginTop: "10px" }}
-				/>
-				<div
-					className="h-1 w-full bg-gradient-to-r from-[#FD8F79] to-[#7855FA]"
-					style={{ marginTop: "20px" }}
-				/>
-				<div
-					className="h-1 w-full bg-gradient-to-r from-[#FD8F79] to-[#7855FA]"
-					style={{ marginTop: "30px" }}
-				/>
-			</div>
-
-			{/* Logo */}
-			<div className="pt-20 pb-8 text-center">
-				<div className="inline-block">
-					<h1 className="text-white text-4xl font-bold tracking-wider">
-						NUTANIX
-					</h1>
-					<h2 className="text-white text-xl">UX Research</h2>
-				</div>
+		<div className="relative min-h-screen flex flex-col pt-12 md:pt-16">
+			<div className="flex flex-col justify-start md:items-center mx-auto">
+				<img src={NutanixLogo} alt="Nutanix Logo" className="h-9 w-fit" />
+				<p className="text-white/80 text-2xl md:text-3xl font-grotesque font-[200] mt-2">
+					UX Research
+				</p>
 			</div>
 
 			{/* Content */}
-			<div className="flex-grow flex items-center justify-center px-4 py-8">
+			<div className="flex-grow flex items-center justify-center px-4 py-4">
 				<div className="w-full max-w-2xl">{children}</div>
 			</div>
 
-			{/* Gradient lines at bottom */}
-			<div className="absolute bottom-0 left-0 right-0 h-16">
-				<div
-					className="h-1 w-full bg-gradient-to-r from-[#FD8F79] to-[#7855FA]"
-					style={{ marginBottom: "30px" }}
-				/>
-				<div
-					className="h-1 w-full bg-gradient-to-r from-[#FD8F79] to-[#7855FA]"
-					style={{ marginBottom: "20px" }}
-				/>
-				<div
-					className="h-1 w-full bg-gradient-to-r from-[#FD8F79] to-[#7855FA]"
-					style={{ marginBottom: "10px" }}
+			<div className="flex items-center justify-between text-center py-2 px-4 text-white mt-auto bg-[#1C1C1C]">
+				<p className="text-sm font-montserrat font-semibold">
+					Washington, D.C. | May 7-9, 2025
+				</p>
+				<img
+					src={NutanixNextLogo}
+					alt="Nutanix Next Logo"
+					className="h-6 w-fit"
 				/>
 			</div>
-
-			{/* Footer */}
-			<div className="pb-20 text-center text-white">
-				<p>Washington, D.C. | May 7-9, 2025</p>
-				<div className="mt-2">
-					<span className="font-bold">NUTANIX</span>
-					<span className="ml-1 text-sm">next</span>
-				</div>
+			<div className="absolute top-0 left-0 w-full h-full -z-10 bg-[#131313] block md:hidden">
+				<img
+					src={MobileTopLines}
+					alt="Mobile Top Lines"
+					className="absolute top-0 left-0 w-full"
+				/>
+				<img
+					src={MobileBottomLines}
+					alt="Mobile Bottom Lines"
+					className="absolute bottom-0 left-0 w-full"
+				/>
+				<img
+					src={GradientMobile}
+					alt="Gradient Mobile"
+					className="absolute top-0 left-0 w-full h-full "
+				/>
+			</div>
+			<div className="absolute top-0 left-0 w-full h-full -z-10 bg-[#131313] hidden md:block">
+				<img
+					src={DesktopTopLines}
+					alt="Desktop Top Lines"
+					className="absolute top-0 left-0 w-full"
+				/>
+				<img
+					src={DesktopBottomLines}
+					alt="Desktop Bottom Lines"
+					className="absolute bottom-0 left-0 w-full"
+				/>
+				<img
+					src={DesktopGradientLeft}
+					alt="Desktop Gradient Left"
+					className="absolute top-0 left-0 "
+				/>
+				<img
+					src={DesktopGradientRight}
+					alt="Desktop Gradient Right"
+					className="absolute bottom-0 right-0 "
+				/>
 			</div>
 		</div>
 	);
