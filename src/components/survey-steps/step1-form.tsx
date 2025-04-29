@@ -54,13 +54,13 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 								>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="partner" id="partner" />
-										<Label htmlFor="partner" className="text-lg">
+										<Label htmlFor="partner" className="text-lg font-normal! font-sans!">
 											I am a Partner
 										</Label>
 									</div>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="customer" id="customer" />
-										<Label htmlFor="customer" className="text-lg">
+										<Label htmlFor="customer" className="text-lg font-normal! font-sans!">
 											I am a Customer
 										</Label>
 									</div>
@@ -69,19 +69,19 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
 											value="future-customer"
 											id="future-customer"
 										/>
-										<Label htmlFor="future-customer" className="text-lg">
+										<Label htmlFor="future-customer" className="text-lg font-normal! font-sans!">
 											I am a Future Customer
 										</Label>
 									</div>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="employee" id="employee" />
-										<Label htmlFor="employee" className="text-lg">
+										<Label htmlFor="employee" className="text-lg font-normal! font-sans!">
 											I am a Nutanix Employee
 										</Label>
 									</div>
 									<div className="flex items-center space-x-2">
 										<RadioGroupItem value="other" id="other" />
-										<Label htmlFor="other" className="text-lg">
+										<Label htmlFor="other" className="text-lg font-normal! font-sans!">
 											Other...
 										</Label>
 									</div>
