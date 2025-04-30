@@ -8,9 +8,9 @@
     "build": "vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",
-    "format": "biome format",
-    "lint": "biome lint",
-    "check": "biome check"
+    "lint": "eslint",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "check": "prettier --write . && eslint --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -36,7 +36,7 @@
     "zod": "^3.24.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@tanstack/eslint-config": "^0.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
     "@types/react": "^19.0.8",

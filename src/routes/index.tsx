@@ -1,14 +1,14 @@
-import { SurveyLayout } from "@/components/survey-layout";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from '@tanstack/react-router'
+import { SurveyLayout } from '@/components/survey-layout'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
-export const Route = createFileRoute("/")({
-	component: App,
-});
+export const Route = createFileRoute('/')({
+  component: App,
+})
 
 function App() {
-	return (
+  return (
     <SurveyLayout>
       <div className="container px-4 py-8 text-center sm:py-16">
         <div className="mx-auto max-w-3xl space-y-6 sm:space-y-8">
@@ -24,8 +24,8 @@ function App() {
             <Link
               to="/survey"
               className={cn(
-                buttonVariants({ variant: "default", size: "lg" }),
-                "h-12 text-lg"
+                buttonVariants({ variant: 'default', size: 'lg' }),
+                'h-12 text-lg',
               )}
             >
               Sign Up Here

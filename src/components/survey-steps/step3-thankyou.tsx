@@ -11,10 +11,11 @@ export function Step3Thankyou() {
         </p>
         <p className="md:text-2xl text-xl">
           For research-related conversations, feel free to get in touch with
-          Paul DiGioia at{" "}
+          Paul DiGioia at{' '}
           <a href="mailto:pdigioia@nutanix.com" className="text-primary">
             pdigioia@nutanix.com
-          </a>.
+          </a>
+          .
         </p>
         <p className="md:text-2xl text-xl">
           We look forward to connecting with you!
