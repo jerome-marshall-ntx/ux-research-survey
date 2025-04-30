@@ -176,10 +176,10 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email ID {RequiredIndicator}</FormLabel>
+              <FormLabel>Email Address {RequiredIndicator}</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Enter your work email ID"
+                  placeholder="Enter your work email address"
                   type="email"
                   {...field}
                 />
