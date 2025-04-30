@@ -32,11 +32,17 @@ export function SurveyLayout({ children }: SurveyLayoutProps) {
         <p className="font-montserrat text-sm font-semibold">
           Washington, D.C. | May 7-9, 2025
         </p>
-        <img
-          src={NutanixNextLogo}
-          alt="Nutanix Next Logo"
-          className="h-6 w-fit"
-        />
+        <a
+          href="https://www.nutanix.com/next"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={NutanixNextLogo}
+            alt="Nutanix Next Logo"
+            className="h-6 w-fit"
+          />
+        </a>
       </div>
       <div className="absolute top-0 left-0 -z-10 block h-full w-full bg-[#131313] md:hidden">
         <img

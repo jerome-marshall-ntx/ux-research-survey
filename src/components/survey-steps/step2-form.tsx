@@ -91,7 +91,7 @@ export function Step2Form({
                               }}
                             />
                           </FormControl>
-                          <FormLabel className="font-sans! text-base font-normal!">
+                          <FormLabel className="font-sans! font-normal!">
                             {option}
                           </FormLabel>
                         </FormItem>
