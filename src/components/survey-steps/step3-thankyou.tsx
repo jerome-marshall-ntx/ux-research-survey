@@ -10,10 +10,10 @@ export function Step3Thankyou() {
           We value your interest and appreciate you taking out the time.
         </p>
         <p className="text-xl md:text-2xl">
-          For research-related conversations, feel free to get in touch with
-          Paul DiGioia at{' '}
-          <a href="mailto:pdigioia@nutanix.com" className="text-primary">
-            pdigioia@nutanix.com
+          For research-related conversations, feel free to get in touch with the
+          UX Research team at{' '}
+          <a href="mailto:ux-research@nutanix.com" className="text-primary">
+            ux-research@nutanix.com
           </a>
           .
         </p>
