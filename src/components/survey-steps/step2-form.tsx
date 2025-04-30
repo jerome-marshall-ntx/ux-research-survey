@@ -75,7 +75,7 @@ export function Step2Form({
                       return (
                         <FormItem
                           key={option}
-                          className="flex flex-row items-center space-x-3 space-y-0"
+                          className="flex flex-row items-center space-y-0 space-x-3"
                         >
                           <FormControl>
                             <Checkbox
@@ -91,7 +91,7 @@ export function Step2Form({
                               }}
                             />
                           </FormControl>
-                          <FormLabel className="text-base font-normal! font-sans!">
+                          <FormLabel className="font-sans! text-base font-normal!">
                             {option}
                           </FormLabel>
                         </FormItem>

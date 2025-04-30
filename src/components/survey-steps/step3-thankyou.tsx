@@ -1,15 +1,15 @@
 export function Step3Thankyou() {
   return (
-    <div className="flex flex-col md:py-8 py-4 px-4 max-w-2xl mx-auto">
-      <h1 className="md:text-5xl text-3xl font-bold text-primary mb-6">
+    <div className="mx-auto flex max-w-2xl flex-col px-4 py-4 md:py-8">
+      <h1 className="mb-6 text-3xl font-bold text-primary md:text-5xl">
         Thank You!
       </h1>
 
-      <div className=" text-gray-600 space-y-4">
-        <p className="md:text-2xl text-xl">
+      <div className="space-y-4 text-gray-600">
+        <p className="text-xl md:text-2xl">
           We value your interest and appreciate you taking out the time.
         </p>
-        <p className="md:text-2xl text-xl">
+        <p className="text-xl md:text-2xl">
           For research-related conversations, feel free to get in touch with
           Paul DiGioia at{' '}
           <a href="mailto:pdigioia@nutanix.com" className="text-primary">
@@ -17,12 +17,12 @@ export function Step3Thankyou() {
           </a>
           .
         </p>
-        <p className="md:text-2xl text-xl">
+        <p className="text-xl md:text-2xl">
           We look forward to connecting with you!
         </p>
       </div>
 
-      <div className="mt-10 flex items-center text-primary space-x-2">
+      <div className="mt-10 flex items-center space-x-2 text-primary">
         <a href="https://www.nutanix.com" className="text-xl hover:underline">
           Nutanix.com
         </a>

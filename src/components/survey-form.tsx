@@ -78,7 +78,7 @@ export function SurveyForm() {
   }
 
   return (
-    <Card className="bg-white rounded-lg shadow-lg overflow-hidden p-5 md:p-6">
+    <Card className="overflow-hidden rounded-lg bg-white p-5 shadow-lg md:p-6">
       {step === 1 && (
         <Step1Form onSubmit={handleStep1Submit} defaultValues={formData} />
       )}

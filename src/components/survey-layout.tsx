@@ -15,21 +15,21 @@ interface SurveyLayoutProps {
 
 export function SurveyLayout({ children }: SurveyLayoutProps) {
   return (
-    <div className="relative min-h-dvh flex flex-col pt-12 md:pt-16">
-      <div className="flex flex-col justify-start items-center mx-auto">
+    <div className="relative flex min-h-dvh flex-col pt-12 md:pt-16">
+      <div className="mx-auto flex flex-col items-center justify-start">
         <img src={NutanixLogo} alt="Nutanix Logo" className="h-9 w-fit" />
-        <p className="text-white/80 text-2xl md:text-3xl font-grotesque font-[200] mt-2">
+        <p className="mt-2 font-grotesque text-2xl font-[200] text-white/80 md:text-3xl">
           UX Research
         </p>
       </div>
 
       {/* Content */}
-      <div className="flex-grow flex items-center justify-center px-4 py-4">
+      <div className="flex flex-grow items-center justify-center px-4 py-4">
         <div className="w-full max-w-2xl">{children}</div>
       </div>
 
-      <div className="flex items-center justify-between text-center py-2 px-4 text-white mt-auto bg-[#1C1C1C]">
-        <p className="text-sm font-montserrat font-semibold">
+      <div className="mt-auto flex items-center justify-between bg-[#1C1C1C] px-4 py-2 text-center text-white">
+        <p className="font-montserrat text-sm font-semibold">
           Washington, D.C. | May 7-9, 2025
         </p>
         <img
@@ -38,7 +38,7 @@ export function SurveyLayout({ children }: SurveyLayoutProps) {
           className="h-6 w-fit"
         />
       </div>
-      <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[#131313] block md:hidden">
+      <div className="absolute top-0 left-0 -z-10 block h-full w-full bg-[#131313] md:hidden">
         <img
           src={MobileTopLines}
           alt="Mobile Top Lines"
@@ -52,10 +52,10 @@ export function SurveyLayout({ children }: SurveyLayoutProps) {
         <img
           src={GradientMobile}
           alt="Gradient Mobile"
-          className="absolute top-0 left-0 w-full h-full "
+          className="absolute top-0 left-0 h-full w-full"
         />
       </div>
-      <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[#131313] hidden md:block">
+      <div className="absolute top-0 left-0 -z-10 hidden h-full w-full bg-[#131313] md:block">
         <img
           src={DesktopTopLines}
           alt="Desktop Top Lines"
@@ -69,12 +69,12 @@ export function SurveyLayout({ children }: SurveyLayoutProps) {
         <img
           src={DesktopGradientLeft}
           alt="Desktop Gradient Left"
-          className="absolute top-0 left-0 "
+          className="absolute top-0 left-0"
         />
         <img
           src={DesktopGradientRight}
           alt="Desktop Gradient Right"
-          className="absolute bottom-0 right-0 "
+          className="absolute right-0 bottom-0"
         />
       </div>
     </div>

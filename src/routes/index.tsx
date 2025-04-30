@@ -12,7 +12,7 @@ function App() {
     <SurveyLayout>
       <div className="container px-4 py-8 text-center sm:py-16">
         <div className="mx-auto max-w-3xl space-y-6 sm:space-y-8">
-          <h1 className="flex flex-col gap-2 text-white text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+          <h1 className="flex flex-col gap-2 text-4xl leading-tight font-bold text-white sm:text-5xl md:text-6xl">
             Join the Nutanix Research Community
           </h1>
 

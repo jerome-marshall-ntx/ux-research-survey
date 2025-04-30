@@ -53,13 +53,13 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
                 <RadioGroup
                   onValueChange={field.onChange}
                   defaultValue={field.value}
-                  className=" mt-2"
+                  className="mt-2"
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="partner" id="partner" />
                     <Label
                       htmlFor="partner"
-                      className="font-normal! font-sans!"
+                      className="font-sans! font-normal!"
                     >
                       I am a Partner
                     </Label>
@@ -68,7 +68,7 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
                     <RadioGroupItem value="customer" id="customer" />
                     <Label
                       htmlFor="customer"
-                      className="font-normal! font-sans!"
+                      className="font-sans! font-normal!"
                     >
                       I am a Customer
                     </Label>
@@ -80,7 +80,7 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
                     />
                     <Label
                       htmlFor="future-customer"
-                      className="font-normal! font-sans!"
+                      className="font-sans! font-normal!"
                     >
                       I am a Future Customer
                     </Label>
@@ -89,14 +89,14 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
                     <RadioGroupItem value="employee" id="employee" />
                     <Label
                       htmlFor="employee"
-                      className="font-normal! font-sans!"
+                      className="font-sans! font-normal!"
                     >
                       I am a Nutanix Employee
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="other" id="other" />
-                    <Label htmlFor="other" className="font-normal! font-sans!">
+                    <Label htmlFor="other" className="font-sans! font-normal!">
                       Other...
                     </Label>
                   </div>
@@ -128,7 +128,7 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
           />
         )}
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid gap-4 md:grid-cols-2">
           <FormField
             control={form.control}
             name="firstName"
