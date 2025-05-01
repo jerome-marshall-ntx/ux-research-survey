@@ -53,7 +53,7 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
                 <RadioGroup
                   onValueChange={field.onChange}
                   defaultValue={field.value}
-                  className="mt-2 space-y-2"
+                  className="mt-2"
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="partner" id="partner" />
@@ -176,10 +176,10 @@ export function Step1Form({ onSubmit, defaultValues }: Step1FormProps) {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address {RequiredIndicator}</FormLabel>
+              <FormLabel>Email ID {RequiredIndicator}</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Enter your work email address"
+                  placeholder="Enter your work email ID"
                   type="email"
                   {...field}
                 />
