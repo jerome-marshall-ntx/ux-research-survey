@@ -1,8 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Montserrat:ital,wght@0,200,300,400,600;1,600&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Darker Grotesque';
+  src: url('/fonts/DarkerGrotesque-VariableFont_wght.ttf') format('ttf');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
   @apply m-0;
