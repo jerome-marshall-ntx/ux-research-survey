@@ -12,7 +12,11 @@ export function Step3Thankyou() {
         <p className="text-xl md:text-2xl">
           For research-related conversations, feel free to get in touch with the
           UX Research team at{' '}
-          <a href="mailto:ux-research@nutanix.com" className="text-primary">
+          <a
+            href="mailto:ux-research@nutanix.com"
+            className="text-primary text-nowrap
+            "
+          >
             ux-research@nutanix.com
           </a>
           .
