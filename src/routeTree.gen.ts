@@ -11,20 +11,20 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as SurveyImport } from './routes/survey'
-import { Route as IndexImport } from './routes/index'
+import { Route as UxResearchSurveyIndexImport } from './routes/ux-research-survey/index'
+import { Route as UxResearchCommunityIndexImport } from './routes/ux-research-community/index'
 
 // Create/Update Routes
 
-const SurveyRoute = SurveyImport.update({
-  id: '/survey',
-  path: '/survey',
+const UxResearchSurveyIndexRoute = UxResearchSurveyIndexImport.update({
+  id: '/ux-research-survey/',
+  path: '/ux-research-survey/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const IndexRoute = IndexImport.update({
-  id: '/',
-  path: '/',
+const UxResearchCommunityIndexRoute = UxResearchCommunityIndexImport.update({
+  id: '/ux-research-community/',
+  path: '/ux-research-community/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -32,18 +32,18 @@ const IndexRoute = IndexImport.update({
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
+    '/ux-research-community/': {
+      id: '/ux-research-community/'
+      path: '/ux-research-community'
+      fullPath: '/ux-research-community'
+      preLoaderRoute: typeof UxResearchCommunityIndexImport
       parentRoute: typeof rootRoute
     }
-    '/survey': {
-      id: '/survey'
-      path: '/survey'
-      fullPath: '/survey'
-      preLoaderRoute: typeof SurveyImport
+    '/ux-research-survey/': {
+      id: '/ux-research-survey/'
+      path: '/ux-research-survey'
+      fullPath: '/ux-research-survey'
+      preLoaderRoute: typeof UxResearchSurveyIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -52,38 +52,38 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/survey': typeof SurveyRoute
+  '/ux-research-community': typeof UxResearchCommunityIndexRoute
+  '/ux-research-survey': typeof UxResearchSurveyIndexRoute
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/survey': typeof SurveyRoute
+  '/ux-research-community': typeof UxResearchCommunityIndexRoute
+  '/ux-research-survey': typeof UxResearchSurveyIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/survey': typeof SurveyRoute
+  '/ux-research-community/': typeof UxResearchCommunityIndexRoute
+  '/ux-research-survey/': typeof UxResearchSurveyIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/survey'
+  fullPaths: '/ux-research-community' | '/ux-research-survey'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/survey'
-  id: '__root__' | '/' | '/survey'
+  to: '/ux-research-community' | '/ux-research-survey'
+  id: '__root__' | '/ux-research-community/' | '/ux-research-survey/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  SurveyRoute: typeof SurveyRoute
+  UxResearchCommunityIndexRoute: typeof UxResearchCommunityIndexRoute
+  UxResearchSurveyIndexRoute: typeof UxResearchSurveyIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  SurveyRoute: SurveyRoute,
+  UxResearchCommunityIndexRoute: UxResearchCommunityIndexRoute,
+  UxResearchSurveyIndexRoute: UxResearchSurveyIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -96,15 +96,15 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/",
-        "/survey"
+        "/ux-research-community/",
+        "/ux-research-survey/"
       ]
     },
-    "/": {
-      "filePath": "index.tsx"
+    "/ux-research-community/": {
+      "filePath": "ux-research-community/index.tsx"
     },
-    "/survey": {
-      "filePath": "survey.tsx"
+    "/ux-research-survey/": {
+      "filePath": "ux-research-survey/index.tsx"
     }
   }
 }
